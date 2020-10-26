@@ -6,8 +6,8 @@ const uri = 'mongodb+srv://pedrito:<osaris03121971280>@cluster0.usq6d.mongodb.ne
 
 mongoose.connect(uri, {
     // useCreateIndex: true,
-    useNewUrlParser: true,
     // useFindAndModify: false,
+    useNewUrlParser: true,
     useUnifiedTopology: true
 })
 
