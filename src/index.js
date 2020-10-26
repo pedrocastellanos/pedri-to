@@ -3,6 +3,7 @@ const path = require('path');
 const exhbs = require('express-handlebars');
 const methodOverride = require('method-override');
 const session = require('express-session');
+const MongoStore = require('connect-mongo')(session);
 const flash = require('connect-flash');
 const passport = require('passport');
 
@@ -39,7 +40,8 @@ app.use(methodOverride('_method'))
 app.use(session({
     secret: 'urlshortener',
     resave: true,
-    saveUninitialized: true
+    saveUninitialized: true,
+    store: new MongoStore({ url: 'mongodb+srv://pedrito:<Osaris03121971280>@cluster0.usq6d.mongodb.net/<urlshortenerdb>?retryWrites=true&w=majority' })
 }))
 
 app.use(passport.initialize())
