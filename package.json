@@ -4,7 +4,8 @@
   "description": "A modern URL shortener",
   "main": "index.js",
   "scripts": {
-    "start": "nodemon src/index.js"
+    "start": " src/index.js",
+    "dev": "nodemon src/index.js"
   },
   "author": "",
   "license": "ISC",
