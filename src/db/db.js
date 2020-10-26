@@ -5,9 +5,9 @@ const uri = 'mongodb+srv://pedrito:<password>@cluster0.usq6d.mongodb.net/<dbname
 
 
 mongoose.connect(uri, {
-    useCreateIndex: true,
+    // useCreateIndex: true,
     useNewUrlParser: true,
-    useFindAndModify: false,
+    // useFindAndModify: false,
     useUnifiedTopology: true
 })
 
