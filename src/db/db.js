@@ -1,7 +1,7 @@
 const mongoose = require('mongoose');
 
 
-const uri = 'mongodb+srv://pedrito:<osaris03121971280>@cluster0.usq6d.mongodb.net/<urlshortenerdb>?retryWrites=true&w=majority'
+const uri = 'mongodb+srv://pedrito:<Osaris03121971280>@cluster0.usq6d.mongodb.net/<urlshortenerdb>?retryWrites=true&w=majority'
 
 
 mongoose.connect(uri, {
