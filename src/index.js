@@ -42,7 +42,7 @@ app.use(session({
     resave: true,
     saveUninitialized: true,
     store: new MongoStore({
-        url: 'mongodb+srv://pedrito:<Osaris03121971280>@cluster0.usq6d.mongodb.net/<urlshortenerdb>?retryWrites=true&w=majority',
+        url: 'mongodb+srv://pedrito:<Osaris03121971280>@cluster0.usq6d.mongodb.net/<urlshortenerdb-session>?retryWrites=true&w=majority',
         mongoOptions:{
             useNewUrlParser: true, 
             useUnifiedTopology: true
