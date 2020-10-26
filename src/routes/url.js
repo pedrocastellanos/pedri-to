@@ -19,7 +19,7 @@ router.post('/myurls', async (req, res)=>{
         
         let length = Math.floor(Math.random() * (8-4) + 4)
         
-        let urlShort = 'p' 
+        let urlShort = req.headers.host + '/' 
         // let urlShort = req.headers.host + '/' 
         for (let i = 0; i <= length; i++) {
             let array = Math.floor(Math.random() * (3-1) + 1)
