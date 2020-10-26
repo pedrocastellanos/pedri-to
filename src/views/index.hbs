@@ -1,0 +1,17 @@
+<section class="section" id="section">
+        <div class="main">
+            <h1 class="title">Pedri.To</h1>
+            <form action="/myurls" method="POST">
+                <div class="search-box">
+                    <input class="search-txt" type="text" placeholder="TYPE TO SHORT" id="input-url" name="oldurl">
+                    <button class="search-btn" id="search-btn" type="submit">
+                        <i class="fas fa-paper-plane"></i>
+                    </button>
+                </div>
+            </form>
+        </div>
+        {{#if newurl}}
+            {{>newurl}}
+        {{/if}}        
+</section>
+
