@@ -60,7 +60,7 @@ router.post('/register', async (req, res)=>{
         console.log('Was Here', 'line 60')
         const emailUser = await User.findOne({email: email}).exec((err)=>{
             if (err) return console.error(err)
-        }s)
+        })
 
         // const emailUser = (email, done)=>{
         //     User.findOne({email: email}, (err, data)=>{
