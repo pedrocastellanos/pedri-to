@@ -58,7 +58,7 @@ router.post('/register', async (req, res)=>{
         res.render('register', {errors, name, email, password, confirm_password})
     } else {
         console.log('Was Here', 'line 60')
-        const emailUser = await User.findOne({email: email})
+        const emailUser = await User.findOne({'email': email})
         if (emailUser) {
             req.flash('success_msg', 'This email already in use')
             console.log(req.flash())
