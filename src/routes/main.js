@@ -1,6 +1,6 @@
 const express = require('express');
 const router = express.Router()
-
+const mongoose = require('mongoose');
 const passport = require('passport');
 const User = require('../models/User')
 const { isAuthenticated } = require("../helpers/auth");
@@ -60,8 +60,8 @@ router.post('/register', async (req, res)=>{
         console.log('Was Here', 'line 60')
         // const emailUser = await User.findOne({'email': email})
         // if (emailUser) {
-        //     // req.flash('success_msg', 'This email already in use')
-        //     // console.log(req.flash())
+        //     req.flash('success_msg', 'This email already in use')
+        //     console.log(req.flash())
         //     res.redirect('/register')
         // } 
             console.log('Was Here', 'line 67')
@@ -69,7 +69,9 @@ router.post('/register', async (req, res)=>{
             console.log('Was Here', 'line 69')
             newUser.password = await newUser.encryptPassword(password)
             console.log('Was Here', 'line 71')
-            await newUser.save()
+            await newUser.save((err)=>{
+                if (err) return console.error(err);
+            })
             console.log('Was Here', 'line 73')
             req.flash('success_msg', 'You are registered')
             res.redirect('/login')
