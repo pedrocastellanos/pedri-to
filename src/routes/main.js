@@ -21,7 +21,10 @@ router.post('/login', passport.authenticate('local', {
     successRedirect: '/myurls',
     failureRedirect: '/login',
     failureFlash: true
-}))
+}), (req, res)=>{
+        console.log('Was Here', 'line 69')
+    }
+)
 
 router.get('/register', (req, res)=>{
     res.render('register')
