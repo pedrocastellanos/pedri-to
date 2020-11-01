@@ -21,10 +21,7 @@ router.post('/login', passport.authenticate('local', {
     successRedirect: '/myurls',
     failureRedirect: '/login',
     failureFlash: true
-}), (req, res)=>{
-        console.log('Was Here', 'line 69')
-    }
-)
+}))
 
 router.get('/register', (req, res)=>{
     res.render('register')
@@ -61,19 +58,33 @@ router.post('/register', async (req, res)=>{
         res.render('register', {errors, name, email, password, confirm_password})
     } else {
         console.log('Was Here', 'line 60')
-        // const emailUser = await User.findOne({email: email}, (err)=>{
-        //     if (err) return console.error(err)
-        //// })
+        const emailUser = await User.findOne({email: email}).exec((err)=>{
+            if (err) return console.error(err)
+        }s)
+
+        // const emailUser = (email, done)=>{
+        //     User.findOne({email: email}, (err, data)=>{
+        //         if(err) return done(err);
+        //         return done(null, data)
+        //     })
+        // }
+        // const emailUser = (email, done) =>{
+        //     User.findOne({{email: email}}, function(err, data) {
+        //       console.log(data);
+        //       if(err) return done(err);
+        //       return done(null, data)
+        //     })
+        //   };
         
         console.log('Was Here', 'line 67')
-        // if (emailUser) {
-        //     console.log('Was Here', 'line 69')
-        //     req.flash('success_msg', 'This email already in use')
-        //     console.log('Was Here', 'line 69')
-        //     // console.log(req.flash())
-        //     res.redirect('/register')
-        //     // console.log('Was Here', 'line 69')
-        // } 
+        if (emailUser) {
+            console.log('Was Here', 'line 69')
+            req.flash('success_msg', 'This email already in use')
+            console.log('Was Here', 'line 69')
+            // console.log(req.flash())
+            res.redirect('/register')
+            // console.log('Was Here', 'line 69')
+        } 
             // console.log('Was Here', 'line 73')
             const newUser = new User({name, email, password})
             // console.log('Was Here', 'line 75')
