@@ -58,12 +58,12 @@ router.post('/register', async (req, res)=>{
         res.render('register', {errors, name, email, password, confirm_password})
     } else {
         console.log('Was Here', 'line 60')
-        // const emailUser = await User.findOne({'email': email})
-        // if (emailUser) {
-        //     req.flash('success_msg', 'This email already in use')
-        //     console.log(req.flash())
-        //     res.redirect('/register')
-        // } 
+        const emailUser = await User.findOne({'email': email}, (err)=>{console.error(err)})
+        if (emailUser) {
+            req.flash('success_msg', 'This email already in use')
+            console.log(req.flash())
+            res.redirect('/register')
+        } 
             console.log('Was Here', 'line 67')
             const newUser = new User({name, email, password})
             console.log('Was Here', 'line 69')
