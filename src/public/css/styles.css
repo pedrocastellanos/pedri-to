@@ -13,13 +13,12 @@ body {
 }
 
 /*navbar styling*/
-
 .navbar{
     position: fixed;
     width: 100%;
     z-index: 999;
-    /* background: crimson; */
     padding: 20px 0;
+    transition: all 0.3s ease;
 }
 
 .navbar .max-width {
@@ -271,6 +270,153 @@ body {
     z-index: -1;
 }
 
+/* @import url('./login.css') */
+.login-section{
+    position: relative;
+    top: 93px;
+    /* background-color: red; */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: calc(100vh - 93px);
+}
+
+.login-main{
+    width: 300px;
+    height: 400px;
+    /* background-color: blue; */
+}
+
+.register-main{
+    position: relative;
+    top: -50px;
+}
+
+.login-title{
+    text-align: center;
+    color: #fff;
+    font-size: 25px;
+}
+
+.form-group {
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex: 0 0 auto;
+    flex: 0 0 auto;
+    -ms-flex-flow: row wrap;
+    flex-flow: row wrap;
+    -ms-flex-align: center;
+    align-items: center;
+    margin-bottom: 0;
+    margin-bottom: 1rem;
+  }
+
+
+  .name-input, .email-input, .password-input {
+    display: block;
+    width: 100%;
+    height: calc(1.5em + 0.75rem + 2px);
+    padding: 0.375rem 0.75rem;
+    font-size: 1rem;
+    font-weight: 400;
+    line-height: 1.5;
+    color: #495057;
+    background-color: #fff;
+    background-clip: padding-box;
+    border: 1px solid #ced4da;
+    border-radius: 0.25rem;
+    transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+}
+
+.send-btn{
+    display: block;
+    width: 100%;
+    font-weight: 400;
+    text-align: center;
+    vertical-align: middle;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    border: 1px solid #343a40;
+    padding: 0.375rem 0.75rem;
+    font-size: 1rem;
+    line-height: 1.5;
+    border-radius: 0.25rem;
+    transition: color 0.15s ease-in-out, background-color 0.15s ease-in-out, border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+    color: #fff;
+    background-color: #343a40;
+}
+
+/*NavBar Scroll*/
+.sticky{
+    background-color: #343a40;
+}
+
+/*MyURLS*/
+
+.urls-main{
+    /* background-color: rebeccapurple; */
+    position: relative;
+    top: 93px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    min-height: calc(100vh - 93px);
+}
+
+.urls{
+    position: relative;
+    width: 100%;
+    height: 100%;
+    display: grid;
+    grid-template-columns: repeat(4, 25%);
+    grid-template-rows: repeat(3, 33%);
+}
+
+.card{
+    margin: 10px;
+    background-color: #2d8eff;
+    border: 3px solid #2f3640;
+    box-sizing: border-box;
+}
+
+.card-header{
+    margin-top: -19px;
+    background-color: #ccc;
+    width: 100%;
+    color: #000;
+    text-align: center;
+    border-bottom: 3px solid #2f3640;
+}
+.card-subtitle {
+    margin-top: -12px;
+}
+.card-body {
+    color: #fff;
+}
+
+.card-body h3{
+    text-align: center;
+    font-size: 18px;
+    position: relative;
+}
+.card-body h3 span{
+    display: block;
+    font-size: 18px;
+    /* position: relative; */
+}
+
+.card-body h3 i{
+    color: #000;
+    font-size: 20px;
+    position: absolute;
+    right: 15px;
+    cursor: pointer;
+}
+
 
 /*Responsive Menu Media Query*/
 @media (max-width: 991px) {
@@ -370,6 +516,7 @@ body {
         margin: 20px 0;
         font-size: 25px;
     }
+}
 
     @media (max-width: 703px) {
         .search-btn {
@@ -412,84 +559,158 @@ body {
             transform: translateY(-50%) rotate(45deg);
             z-index: -1;
         }
+        .urls{
+            position: relative;
+            width: 100%;
+            height: 100%;
+            display: grid;
+            grid-template-columns: repeat(2, 50%);
+        }
+}
+
+@media (max-width: 578px) {
+    .urls{
+        position: relative;
+        width: 100%;
+        height: 100%;
+        display: grid;
+        grid-template-columns: repeat(1, 100%);
     }
 }
 
-/* @import url('./login.css') */
-.login-section{
+/*About Section*/
+.main-section{
+    /* background-color: rebeccapurple; */
     position: relative;
     top: 93px;
+    display: grid;
+    grid-template-columns: repeat(2, 45%);
+    align-items: center;
+    /* display: flex; */
+    /* justify-content: center; */
+    /* align-items: center; */
+    width: 100%;
+    min-height: calc(100vh - 93px);
+}
+
+.text p {
+    padding: 15px;
+}
+.text a {
+    background-color: #fff;
+    font-weight: bold;
+    color: #2d8eff;
+    padding: 13px 40px;
+    border-radius: 20px;
+    text-decoration: none;
+    text-transform: uppercase;
+}
+
+.information{
     /* background-color: red; */
+    margin-top: 93px;
+    display: grid;
+    grid-template-columns: repeat(3, 30%);
+    column-gap: 4%;
+    grid-template-rows: 250px;
+}
+
+.information-card{
+    background-color: #ccc;
+    border-radius: 10px;
+}
+
+.information-card:first-child{
+    margin-left: 20px;
+}
+/* .information-card-header{
+    background-color: blue;
+} */
+
+.information-card-header h2{
+    color: #1c1e20;
+    text-transform: uppercase;
+    text-align: center;
+    font-size: 23px;
+    text-decoration: underline;
+}
+
+.information-card-body p {
+    padding: 15px;
+    color: #2f3640;
+    font-size: 18px;
+    text-align: center;
+}
+
+.btn{
     display: flex;
     justify-content: center;
     align-items: center;
     width: 100%;
-    height: calc(100vh - 93px);
 }
 
-.login-main{
-    width: 300px;
-    height: 400px;
-    /* background-color: blue; */
-}
-
-.register-main{
-    position: relative;
-    top: -50px;
-}
-
-.login-title{
-    text-align: center;
-    color: #fff;
-    font-size: 25px;
-}
-
-.form-group {
-    display: -ms-flexbox;
-    display: flex;
-    -ms-flex: 0 0 auto;
-    flex: 0 0 auto;
-    -ms-flex-flow: row wrap;
-    flex-flow: row wrap;
-    -ms-flex-align: center;
-    align-items: center;
-    margin-bottom: 0;
-    margin-bottom: 1rem;
-  }
-
-
-  .name-input, .email-input, .password-input {
-    display: block;
-    width: 100%;
-    height: calc(1.5em + 0.75rem + 2px);
-    padding: 0.375rem 0.75rem;
-    font-size: 1rem;
-    font-weight: 400;
-    line-height: 1.5;
-    color: #495057;
+.btn-start {
+    display: inline-block;
+    margin-top: 30px;
+    margin-bottom: -40px;
     background-color: #fff;
-    background-clip: padding-box;
-    border: 1px solid #ced4da;
-    border-radius: 0.25rem;
-    transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+    font-weight: bold;
+    color: #2d8eff;
+    padding: 13px 40px;
+    border-radius: 20px;
+    text-decoration: none;
+    text-transform: uppercase;
+    text-align: center;
 }
 
-.send-btn{
-    display: block;
-    width: 100%;
-    font-weight: 400;
-    text-align: center;
-    vertical-align: middle;
-    -webkit-user-select: none;
-    -moz-user-select: none;
-    -ms-user-select: none;
-    user-select: none;
-    border: 1px solid #343a40;
-    padding: 0.375rem 0.75rem;
-    font-size: 1rem;
-    line-height: 1.5;
-    border-radius: 0.25rem;
-    transition: color 0.15s ease-in-out, background-color 0.15s ease-in-out, border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
-    color: #fff;
-    background-color: #343a40;
+@media (max-width: 698px) {
+    .main-section{
+        display: flex;
+        justify-content: center;
+    }
+    .image {
+        display: none;
+    }
+    .information{
+        width: 100%;
+        height: 100%;
+        display: grid;
+        grid-template-columns: 50%;
+        /* background-color: red; */
+        justify-content: center;
+    }
+    .information-card:first-child{
+        margin-left: 0px;
+    }
+
+    .information-card{
+        display: block;
+        margin-top: 15px;
+        margin-bottom: 15px;
+    }
+}
+
+@media (max-width: 578px) {
+    .main-section{
+        display: flex;
+        justify-content: center;
+        /* grid-template-rows: repeat(2, 300px); */
+    }
+    .image{
+        display: none;
+    }
+    .information{
+        /* position: relative; */
+        /* margin-top: -20px; */
+        width: 100%;
+        height: 100%;
+        display: grid;
+        grid-template-columns: repeat(1, 100%);
+    }
+    .information-card:first-child{
+        margin-left: 15px;
+    }
+    .information-card{
+        margin: 15px 15px;
+    }
 }

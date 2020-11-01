@@ -4,9 +4,9 @@ const {Schema} = mongoose
 const UrlSchema =  new Schema({
     oldurl: {type: String, required: true},
     newurl: {type: String, required: true},
+    userId: {type: String},
     date: {type: Date, default: Date.now},
-    user: {type: String},
-    clicks: {type: Number}
+    clicks: {type: Number, default: 0}
 })
 
 module.exports = mongoose.model('Url', UrlSchema)

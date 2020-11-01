@@ -11,6 +11,12 @@ menuBtn.addEventListener("click", () => {
 const searchBtn = document.getElementById("search-btn");
 const inputUrl = document.getElementById("input-url");
 
+inputUrl.addEventListener('change', ()=>{
+  const title = document.querySelector('.title')
+  console.log(title)
+  title.style.display = 'none'
+})
+
 searchBtn.addEventListener("click", async () => {
   const validateUrl = (url) => {
     const urlRegex = /https?:\/\/(www\.)?[-a-zA-Z0-9@:%._\+~#=]{2,256}\.[a-z]{2,6}\b([-a-zA-Z0-9@:%_\+.~#()?&//=]*)/;
@@ -54,5 +60,16 @@ searchBtn.addEventListener("click", async () => {
     });
 
 });
+
+$(document).ready(function(){
+  $(window).scroll(function(){
+      if(this.scrollY > 20){
+          $('.navbar').addClass("sticky");
+      }else{
+          $('.navbar').removeClass("sticky");
+      }
+      
+  });
+})
 
     

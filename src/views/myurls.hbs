@@ -1,0 +1,16 @@
+<div class="urls-main">
+    <div class="urls">
+        {{#each urls}}        
+            <div class="card">
+                <div class="card-header">
+                    <h2 class="card-title">Long URL:</h2>
+                    <h4 class="card-subtitle">{{oldurl}}</h4>
+                </div>
+                <div class="card-body">
+                    <h3>Short URL: <span>{{newurl}}<i class="fas fa-copy"></i></span></h3>
+                    <h3>Number of Clicks: <span>{{clicks}}</span></h3>
+                </div>
+            </div>
+        {{/each}}            
+    </div>
+</div>
