@@ -51,7 +51,9 @@ router.post('/create-url', isAuthenticated, async (req, res)=>{
         var newurl = await generate()
         console.log('User:',req.user)
         const url = new Url({oldurl, newurl, userId})
-        await url.save()
+        await url.save((err)=>{
+            if (err) return console.error(err);
+        })
         res.render('index', {
             newurl
         })
