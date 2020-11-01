@@ -6,6 +6,7 @@ const { isAuthenticated } = require("../helpers/auth");
 const { Authenticated } = require("../helpers/authentication");
 
 router.post('/create-url', isAuthenticated, async (req, res)=>{
+    console.log('Request Received', '/create-url')
     const {oldurl} = req.body
     var userId;
     if (req.user) {

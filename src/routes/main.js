@@ -29,7 +29,7 @@ router.get('/register', (req, res)=>{
 
 router.post('/register', async (req, res)=>{
     const {name, email, password, confirm_password} = req.body
-   
+    console.log('Request Received', '/register')
     //Validar las contraseñas
     const errors=[]
     if (name.length == 0) {
